@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+}
+
+#alert-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInOut 5s ease-in-out;
+}
+
+#alert-image {
+    width: 300px;
+    height: auto;
+}
+
+#alert-text {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
