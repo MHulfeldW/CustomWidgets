@@ -1,8 +1,9 @@
 // Timer.js
 
-let timerDuration = fieldData.timerDuration; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
+let timerDuration = 600; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
 let timerElement = document.getElementById('timer');
 let interval;
+let fieldData;
 
 function startTimer(duration) {
     let start = Date.now();
@@ -21,9 +22,14 @@ function startTimer(duration) {
     }, 1000);
 }
 
+window.addEventListener('onWidgetLoad', function (obj) {
+    fieldData=obj["detail"]["fieldData"];
+});
+
 function pad(value) {
     return value.toString().padStart(2, '0');
 }
 
 // Start the timer
+timerDuration = fieldData.timerDuration;
 startTimer(timerDuration);
