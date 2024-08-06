@@ -1,6 +1,6 @@
 // Timer.js
 
-let timerDuration = fieldData.timeDuration; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
+let timerDuration = 600; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
 let timerElement = document.getElementById('timer');
 let interval;
 
