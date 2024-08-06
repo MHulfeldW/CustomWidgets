@@ -19,3 +19,13 @@ window.addEventListener('onEventReceived', function (obj) {
         }, 5000);
     }
 });
+
+// For testing purposes
+window.dispatchEvent(new CustomEvent('onEventReceived', {
+    detail: {
+        event: {
+            listener: 'follower-latest',
+            name: 'TestFollower'
+        }
+    }
+}));
