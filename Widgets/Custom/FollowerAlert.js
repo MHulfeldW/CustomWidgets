@@ -1,21 +1,27 @@
-const alertContainer = document.getElementById('alert-container');
-const followerNameSpan = document.getElementById('follower-name');
+// Function to display the alert
+function showAlert(username) {
+    const alertMessage = document.getElementById('alert-message');
+    const usernameSpan = document.getElementById('username');
 
+    // Set the username in the alert
+    usernameSpan.textContent = username;
+
+    // Show the alert
+    alertMessage.style.display = 'block';
+
+    // Hide the alert after 5 seconds
+    setTimeout(() => {
+        alertMessage.style.display = 'none';
+    }, 5000);
+}
+
+// Listen for events from StreamElements
 window.addEventListener('onEventReceived', function (obj) {
-    const event = obj.detail.event;
-
-    if (event.listener === 'follower-latest') {
-        const followerName = event.name;
-
-        // Set the follower's name
-        followerNameSpan.textContent = followerName;
-
-        // Show the alert
-        alertContainer.style.display = 'flex';
-
-        // Hide the alert after 5 seconds
-        setTimeout(() => {
-            alertContainer.style.display = 'none';
-        }, 5000);
+    if (obj.detail.event && obj.detail.listener === 'follower-latest') {
+        const follower = obj.detail.event.name;
+        showAlert(follower);
     }
 });
+
+// Hide the alert initially
+document.getElementById('alert-message').style.display = 'none';
