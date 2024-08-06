@@ -1,3 +1,4 @@
+let timerDuration = 300; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
 let timerElement = document.getElementById('timer');
 let interval;
 
