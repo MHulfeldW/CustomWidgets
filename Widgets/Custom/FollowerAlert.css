@@ -16,11 +16,6 @@ body {
     animation: fadeInOut 5s ease-in-out;
 }
 
-#alert-image {
-    width: 300px;
-    height: auto;
-}
-
 #alert-text {
     font-size: 24px;
     color: #fff;
