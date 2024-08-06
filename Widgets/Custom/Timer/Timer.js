@@ -31,5 +31,4 @@ function pad(value) {
 }
 
 // Start the timer
-timerDuration = fieldData.timerDuration;
 startTimer(timerDuration);
