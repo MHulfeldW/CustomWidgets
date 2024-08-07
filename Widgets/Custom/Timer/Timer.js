@@ -1,7 +1,6 @@
-// Timer.js
-
 let timerDuration = 600; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
-let timerElement = document.getElementById('timer');
+let timerBar = document.getElementById('timer-bar');
+let timerText = document.getElementById('timer-text');
 let interval;
 
 function startTimer(duration) {
@@ -12,11 +11,16 @@ function startTimer(duration) {
 
         if (remaining <= 0) {
             clearInterval(interval);
-            timerElement.textContent = "00:00";
+            timerText.textContent = "00:00";
+            timerBar.style.width = '0%';
         } else {
             let minutes = Math.floor(remaining / 60);
             let seconds = remaining % 60;
-            timerElement.textContent = `${pad(minutes)}:${pad(seconds)}`;
+            timerText.textContent = `${pad(minutes)}:${pad(seconds)}`;
+
+            // Update the progress bar width
+            let progress = (remaining / duration) * 100;
+            timerBar.style.width = `${progress}%`;
         }
     }, 1000);
 }

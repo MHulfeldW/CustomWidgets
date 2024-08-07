@@ -4,18 +4,39 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: transparent; /* No background color */
+    background-color: #1e1e1e;
 }
 
 #timer-container {
+    background-color: #2e2e2e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-color: #2e2e2e; /* Remove or set to transparent */
+    width: 50vw; /* or adjust as needed */
+    height: 50vh; /* or adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#timer {
+#timer-bar-container {
+    width: 100%;
+    height: 20px; /* Height of the bar */
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px; /* Space between bar and text */
+}
+
+#timer-bar {
+    height: 100%;
+    background-color: #76c7c0; /* Color of the bar */
+    width: 100%; /* Start full and shrink */
+}
+
+#timer-text {
     font-family: 'Arial', sans-serif;
-    font-size: 48px;
+    font-size: 5vw; /* Scales with container width */
     color: #ffffff;
 }
