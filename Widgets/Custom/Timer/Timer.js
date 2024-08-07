@@ -1,5 +1,6 @@
 // Timer.js
 
+let timerDuration = 600; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
 let timerElement = document.getElementById('timer');
 let interval;
 
@@ -24,12 +25,5 @@ function pad(value) {
     return value.toString().padStart(2, '0');
 }
 
-// Fetch configuration settings from StreamElements
-SE.getWidgetSettings().then(settings => {
-    let timerDuration = settings.timerDuration || 600; // Default to 600 seconds if not set
-    startTimer(timerDuration);
-}).catch(error => {
-    console.error('Error fetching widget settings:', error);
-    // Start with default timer duration if fetching fails
-    startTimer(600);
-});
+// Start the timer
+startTimer(timerDuration);
