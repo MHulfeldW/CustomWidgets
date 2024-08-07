@@ -1,13 +1,5 @@
 // Timer.js
 
-// Function to get the field data (example implementation)
-function getFieldData(fieldName) {
-    // Replace with actual method to get field data from StreamElements
-    // For example, if using StreamElements SDK:
-    return SE_FIELD_DATA[fieldName];
-}
-
-let timerDuration = getFieldData('timerDuration') || 600; // Default to 600 seconds if not set
 let timerElement = document.getElementById('timer');
 let interval;
 
@@ -32,5 +24,12 @@ function pad(value) {
     return value.toString().padStart(2, '0');
 }
 
-// Start the timer with the configured duration
-startTimer(timerDuration);
+// Fetch configuration settings from StreamElements
+SE.getWidgetSettings().then(settings => {
+    let timerDuration = settings.timerDuration || 600; // Default to 600 seconds if not set
+    startTimer(timerDuration);
+}).catch(error => {
+    console.error('Error fetching widget settings:', error);
+    // Start with default timer duration if fetching fails
+    startTimer(600);
+});
