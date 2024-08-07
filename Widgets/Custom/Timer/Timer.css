@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: transparent;
+    background-color: #1e1e1e;
 }
 
 #timer-container {
@@ -12,10 +12,21 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 50vw; /* or adjust as needed */
+    height: 50vh; /* or adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #timer {
     font-family: 'Arial', sans-serif;
-    font-size: 48px;
+    font-size: 10vw; /* Scales with container width */
     color: #ffffff;
+    /* Make sure timer fits within the container */
+    max-width: 90%; /* Ensure timer text doesn't overflow */
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
