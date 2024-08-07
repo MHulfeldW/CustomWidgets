@@ -1,4 +1,13 @@
-let timerDuration = 300; // Set timer duration in seconds (e.g., 600 seconds = 10 minutes)
+// Timer.js
+
+// Function to get the field data (example implementation)
+function getFieldData(fieldName) {
+    // Replace with actual method to get field data from StreamElements
+    // For example, if using StreamElements SDK:
+    return SE_FIELD_DATA[fieldName];
+}
+
+let timerDuration = getFieldData('timerDuration') || 600; // Default to 600 seconds if not set
 let timerElement = document.getElementById('timer');
 let interval;
 
@@ -23,5 +32,5 @@ function pad(value) {
     return value.toString().padStart(2, '0');
 }
 
-// Start the timer
+// Start the timer with the configured duration
 startTimer(timerDuration);
