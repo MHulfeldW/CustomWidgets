@@ -10,7 +10,6 @@ body {
 #timer-container {
     width: 100%;
     max-width: 600px;
-    position: relative;
 }
 
 #timer-bar-container {
@@ -26,12 +25,4 @@ body {
     height: 100%;
     background-color: #00ff00;
     width: 0%; /* Start width at 0% */
-}
-
-#timer-text {
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    color: #ffffff;
-    text-align: center;
-    margin-top: 10px;
 }
