@@ -8,20 +8,14 @@ body {
 }
 
 #timer-container {
-    width: 50vw; /* Adjust as needed */
-    height: 20vh; /* Adjust as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2%; /* Adjust for spacing */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-color: transparent; /* No background color */
+    background-color: #2e2e2e; /* Remove or set to transparent */
 }
 
 #timer {
     font-family: 'Arial', sans-serif;
-    font-size: calc(2vw + 2vh); /* Dynamic font size based on viewport dimensions */
+    font-size: 48px;
     color: #ffffff;
-    max-font-size: 6rem; /* Optional: set a maximum font size to prevent it from getting too large */
 }
